@@ -1,0 +1,131 @@
+.calendar-page {
+  max-width: 720px;
+  margin: 40px auto;
+  padding: 0 16px;
+}
+
+.calendar-card {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: 0 6px 20px rgba(255, 184, 198, 0.35);
+}
+
+.calendar-title {
+  margin: 0 0 16px;
+  font-size: 20px;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.calendar-header .calendar-title {
+  margin: 0;
+}
+
+.calendar-nav-button {
+  border: none;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 999px;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+
+.calendar-weekdays,
+.calendar-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);   /* 같은 폭의 7열 */
+  gap: 6px;
+}
+
+.calendar-weekday {
+  text-align: center;
+  font-size: 13px;
+  padding-bottom: 6px;
+}
+
+.calendar-day {
+  min-height: 72px;             /* 나중에 스티커가 들어갈 높이 */
+  padding: 6px 8px;
+  border: 1px dashed var(--accent);
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+.calendar-day.empty {
+  border: none;
+}
+
+.calendar-day.today {
+  background: var(--accent-2);
+}
+
+.calendar-stickers {
+   display: flex; gap: 2px; font-size: 20px;
+}
+
+/* 날짜 칸을 누를 수 있다는 느낌 */
+.calendar-day:not(.empty) {
+  cursor: pointer;
+}
+
+.calendar-day:not(.empty):hover {
+  border-style: solid;
+}
+
+/* 선택된 칸: today 배경색과 겹쳐도 보이도록 테두리/그림자로 표시 */
+.calendar-day.selected {
+  border: 2px solid var(--accent);
+  box-shadow: 0 0 0 3px rgba(255, 184, 198, 0.4);
+}
+
+/* 팔레트 폼 */
+.calendar-palette {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+  padding: 12px 16px;
+  background: var(--bg);
+  border-radius: var(--radius);
+}
+
+.calendar-palette-select {
+  font-size: 20px;
+  padding: 4px 8px;
+  border: 1px solid var(--accent);
+  border-radius: 10px;
+  background: #fff;
+}
+
+.calendar-palette-button {
+  border: none;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 999px;
+  padding: 6px 14px;
+  cursor: pointer;
+}
+
+/* 에러 문구 */
+.calendar-error {
+  margin: 8px 0 0;
+  color: #e05a6d;
+  font-size: 13px;
+}
+
+/* 스티커: 눌러서 지울 수 있다는 힌트 */
+.calendar-sticker {
+  cursor: pointer;
+  transition: transform 0.15s;
+}
+
+.calendar-sticker:hover {
+  transform: scale(1.2);
+}

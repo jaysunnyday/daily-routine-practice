@@ -1,0 +1,112 @@
+.timechart-page {
+  max-width: 720px;
+  margin: 40px auto;
+  padding: 0 16px;
+}
+
+.timechart-card {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: 0 6px 20px rgba(255, 184, 198, 0.35);
+}
+
+.timechart-box {
+  width: 500px;      /* 360 → 280 (숫자를 바꿔 보면서 크기 조절) */
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* 블록 목록 */
+.timechart-list {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.timechart-list li {
+  padding: 8px 4px;
+  border-bottom: 1px dashed var(--accent);
+}
+
+/* 입력 폼 */
+.timechart-form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.timechart-form select {
+  padding: 8px 12px;
+  border: 1px solid var(--accent);
+  border-radius: 10px;
+  font-size: 14px;
+  color: var(--text);
+  background: #fff;
+}
+
+.timechart-form button {
+  padding: 8px 18px;
+  border: none;
+  border-radius: 10px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.timechart-form button:hover {
+  opacity: 0.85;
+}
+
+/* 에러 메시지 */
+.timechart-error {
+  margin: 12px 0 0;
+  color: #e57373;
+  font-size: 14px;
+}
+
+/* 날짜 이동 (다음 단계에서 쓸 것) */
+.timechart-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+  font-size: 18px;
+}
+
+.timechart-nav button {
+  border: none;
+  background: transparent;
+  color: var(--text);
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.timechart-nav button:hover {
+  color: var(--accent);
+}
+
+.timechart-box {
+  position: relative;          /* 추가: 숫자를 이 박스 기준으로 배치 */
+  /* 나머지는 그대로 */
+}
+
+.timechart-hour {
+  position: absolute;
+  transform: translate(-50%, -50%);   /* 글자의 가운데가 좌표에 오도록 */
+  font-size: 11px;
+  color: var(--text);
+  pointer-events: none;               /* 중요: 클릭이 숫자를 통과해서 도넛에 닿게 */
+}
+
+.timechart-label {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  font-size: 12px;
+  white-space: nowrap;          /* 글자가 줄바꿈되지 않게 */
+  color: var(--text);
+  pointer-events: none;         /* 클릭이 도넛까지 통과하게 */
+}

@@ -1,0 +1,15 @@
+:root {
+  --bg: #fff8f3;        /* 크림색 배경 */
+  --card: #ffffff;
+  --accent: #ffb8c6;    /* 파스텔 핑크 */
+  --accent-2: #b8d8ff;  /* 파스텔 블루 */
+  --text: #5a4a4a;
+  --radius: 16px;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Noto Sans JP', 'Noto Sans KR', sans-serif;
+}

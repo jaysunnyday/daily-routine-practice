@@ -1,0 +1,41 @@
+.app-layout {
+  display: flex;          /* 자식(사이드바, main)을 가로로 나란히 */
+  min-height: 100vh;      /* 화면 높이만큼은 항상 채우기 */
+}
+
+.app-main {
+  flex: 1;                /* 사이드바 뺀 나머지 폭을 전부 차지 */
+}
+
+.nav-bar {
+  width: 200px;
+  flex-shrink: 0;         /* 화면이 좁아도 사이드바가 찌그러지지 않게 */
+  padding: 24px 16px;
+  background: var(--card);
+  box-shadow: 0 6px 20px rgba(255, 184, 198, 0.35);
+  position: sticky;       /* 스크롤해도 따라오게 */
+  top: 0;
+  height: 100vh;
+}
+
+.nav-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column; /* 항목을 세로로 쌓기 */
+  gap: 8px;
+}
+
+.nav-link {
+  display: block;         /* 줄 전체가 클릭되도록 */
+  padding: 10px 14px;
+  border-radius: 999px;
+  color: var(--text);
+  text-decoration: none;  /* 링크 밑줄 제거 */
+}
+
+.nav-link.router-link-active {
+  background: var(--accent);   /* 현재 페이지 강조 */
+  color: #fff;
+}

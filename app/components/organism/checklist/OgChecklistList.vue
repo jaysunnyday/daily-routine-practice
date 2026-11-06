@@ -1,6 +1,6 @@
 <template>
   <section class="checklist-card">
-    <h2 class="checklist-title">오늘의 할 일</h2>
+    <h2 class="checklist-title">今日のToDo</h2>
     <div class="checklist-nav">
       <button type="button" @click="moveDay(-1)">‹</button>
       <span>{{ checklistDate }}</span>

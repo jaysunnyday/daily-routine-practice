@@ -25,8 +25,25 @@
 }
 
 .timechart-list li {
+    display: flex;                    /* 글자와 X를 한 줄에 나란히 */
+  justify-content: space-between;   /* 글자는 왼쪽, X는 오른쪽 끝으로 */
+  align-items: center;
   padding: 8px 4px;
   border-bottom: 1px dashed var(--accent);
+}
+
+.timechart-list button {
+  border: none;
+  background: transparent;
+  color: var(--text);
+  opacity: 0.4;                     /* 평소엔 흐리게 */
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.timechart-list button:hover {
+  opacity: 1;                       /* 마우스를 올리면 진하게 */
+  color: #e57373;                   /* 연한 빨강 */
 }
 
 /* 입력 폼 */

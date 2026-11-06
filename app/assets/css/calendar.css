@@ -129,3 +129,20 @@
 .calendar-sticker:hover {
   transform: scale(1.2);
 }
+
+/* 날짜 숫자: 누르면 체크리스트로 이동한다는 표시 */
+.calendar-day:not(.empty) .calendar-day-number {
+  display: inline-block;
+  padding: 2px 6px;
+  margin: -2px -6px;      /* padding 때문에 칸 안 위치가 움직이지 않게 상쇄 */
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.calendar-day:not(.empty) .calendar-day-number:hover {
+  background: var(--accent);
+  color: #fff;
+  text-decoration: none;
+}

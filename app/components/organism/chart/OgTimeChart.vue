@@ -27,6 +27,7 @@
         {{ toTimeText(b.startMinute) }} ～ {{ toTimeText(b.endMinute) }}　{{
           b.category
         }}
+        <button type="button" @click="onDelete(b)">X</button>
       </li>
     </ul>
     <p v-if="clickedStart !== null" class="timechart-hint">
@@ -201,6 +202,17 @@ function onChartClick(minute: number) {
     startMinute.value = Math.min(a, minute); // 작은 쪽이 시작
     endMinute.value = Math.max(a, minute); // 큰 쪽이 끝
     clickedStart.value = null; // 다음 입력을 위해 비움
+  }
+}
+
+async function onDelete(b: any) {
+  try {
+    await $fetch(`http://localhost:8081/api/timeblock/${b.id}`, {
+      method: "DELETE",
+    });
+    fetchBlocks();
+  } catch (e) {
+    console.error("차트리스트 삭제 실패", e);
   }
 }
 

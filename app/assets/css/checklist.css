@@ -133,3 +133,49 @@
   color: #fff;
   cursor: pointer;
 }
+
+.checklist-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.checklist-nav span {
+  min-width: 110px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.checklist-nav button {
+  width: 32px;
+  height: 32px;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  background: #fff;
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.checklist-nav button:hover {
+  background: #f3f3f3;
+}
+
+/* 수정 중인 content 입력칸 */
+.checklist-edit-input {
+  flex: 1;                 /* 글자(.checklist-item-content)와 같이 남는 폭을 차지 */
+  min-width: 0;            /* flex 안에서 칸이 줄어들 수 있게 (좁은 화면 대비) */
+  padding: 4px 10px;
+  border: 1px solid var(--accent);
+  border-radius: 8px;
+  font: inherit;           /* 글자 크기와 폰트를 주변 글자와 동일하게 */
+  color: var(--text);
+  background: #fff;
+}
+
+.checklist-edit-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 184, 198, 0.4);   /* 달력의 선택 칸과 같은 핑크 강조 */
+}
